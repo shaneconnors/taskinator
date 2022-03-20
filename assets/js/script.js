@@ -1,3 +1,4 @@
+var tasks = [];
 var formEl = document.querySelector("#task-form");
 var tasksToDoEl = document.querySelector("#tasks-to-do");
 
@@ -10,8 +11,9 @@ var taskFormHandler = function(event) {
   // package up data as an object
   var taskDataObj = {
     name: taskNameInput,
-    type: taskTypeInput
-  };
+    type: taskTypeInput,
+    status: "to do"
+  }
 
   // check if input values are empty strings
   if (!taskNameInput || !taskTypeInput) {
@@ -27,6 +29,7 @@ var taskFormHandler = function(event) {
 
 
 var createTaskEl = function(taskDataObj){
+  
 
   // create list item
   var listItemEl = document.createElement("li");
