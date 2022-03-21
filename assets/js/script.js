@@ -94,7 +94,7 @@ var createTaskActions = function(taskId) {
     // create option element
     var statusOptionEl = document.createElement("option");
     statusOptionEl.setAttribute("value", statusChoices[i]);
-    statusOptionEl.textContent = statusChoices[i];
+    statusOptionEl.textContent = i+ statusChoices[i];
 
     // append to select
     statusSelectEl.appendChild(statusOptionEl);
