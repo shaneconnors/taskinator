@@ -12,12 +12,7 @@ var taskFormHandler = function(event) {
   var taskNameInput = document.querySelector("input[name='task-name']").value;
   var taskTypeInput = document.querySelector("select[name='task-type']").value;
 
-  // package up data as an object
-  var taskDataObj = {
-    name: taskNameInput,
-    type: taskTypeInput,
-    status: "to do"
-  }
+  
   // check if inputs are empty (validate)
   if (taskNameInput === "" || taskTypeInput === "") {
     alert("You need to fill out the task form!");
@@ -37,7 +32,8 @@ var taskFormHandler = function(event) {
   } else {
     var taskDataObj = {
       name: taskNameInput,
-      type: taskTypeInput
+      type: taskTypeInput,
+      status: "to do"
     };
 
     createTaskEl(taskDataObj);
@@ -62,6 +58,9 @@ var createTaskEl = function(taskDataObj) {
 
   // increase task counter for next unique id
   taskIdCounter++;
+
+  console.log(taskDataObj);
+  console.log(taskDataObj.status);
 };
 
 var createTaskActions = function(taskId) {
